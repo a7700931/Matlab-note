@@ -86,6 +86,7 @@ x = t.^2;
 plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
 ```
+---
 ### 設定Figure格式
 ```matlab
 set(0,'DefaultAxesFontName','Times New Roman')  % Set all font style
