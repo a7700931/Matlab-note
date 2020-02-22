@@ -50,15 +50,15 @@ plot(tq,xq,'.');
 ### ode45用於矩陣微分方程
 ```matlab
 A = [1 2;3 4];
-t = 0:0.05:1;
-p0 = [0 0;0 0];
-[Tp,P] = ode45(@(t,p) pDRE(t,p,A),t,p0);
-plot(Tp,P);
+t = 0:0.05:5;
+x0 = [1 2;3 -1];
+[Tx,X] = ode45(@(t,x) xDRE(t,x,A),t,x0);
+plot(Tx,X);
 
-function dpdt = pDRE(~,p,A)
-P = reshape(p,size(A));  % Reshape input p into matrix
-Pdot = -P*A-A;
-dpdt = Pdot(:);  % Reshape output as a column vector
+function dxdt = xDRE(~,x,A)
+X = reshape(x,size(A));  % Reshape input p into matrix
+xdot = -X*A-A;
+dxdt = xdot(:);  % Reshape output as a column vector
 end
 ```
 ---
