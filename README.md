@@ -1,5 +1,41 @@
 # Matlab 筆記
 
+### 設定Figure格式
+```matlab
+set(0,'DefaultAxesFontName','Times New Roman')  % Set all font style
+set(0,'DefaultAxesFontWeight','bold') % Set x y axis font style
+% set(0,'DefaultAxesFontSize',11) % Set all figure font size
+set(0,'DefaultAxesLabelFontSizeMultiplier',1.2) % Set x y label size
+set(0,'DefaultAxesTitleFontSizeMultiplier',1.2) % Set all title size
+% set(0,'DefaultAxesTitleFontWeight','normal')  % Set all title style
+set(0,'DefaultAxesLooseInset',[0.0774 0.1016 0.0134 0.0540]) % Delete figure White Space % data from get(gca,'TightInset') 
+set(0,'DefaultAxesXGrid','on','DefaultAxesYGrid','on') % Show x and y grid
+% set(0,'DefaultFigurePaperPositionMode','manual')
+% set(0,'DefaultFigurePaperUnits','inches')
+% set(0,'DefaultFigurePosition',[700 650 14.4*37.81 14.28*0.618*37.81]) % Set figure window position,size and resolution
+% set(0,'DefaultFigureWindowState','maximized') % Set figure fullscreen
+% set(0,'DefaultFigureWindowStyle','docked') % Set figure window style
+set(0,'DefaultLineLineWidth',1.5) % Set all line width
+% set(0,'DefaultFigureInvertHardcopy','off');
+```
+**Note:** 原始設定
+```matlab
+set(0,'DefaultAxesFontName','Helvetica')
+set(0,'DefaultAxesFontWeight','normal')
+% set(0,'DefaultAxesFontSize',10)
+set(0,'DefaultAxesLabelFontSizeMultiplier',1.1)
+set(0,'DefaultAxesTitleFontSizeMultiplier',1.1)
+set(0,'DefaultAxesTitleFontWeight','bold')
+set(0,'DefaultAxesLooseInset',[0.13 0.11 0.095 0.075]);
+set(0,'DefaultAxesXGrid','off','DefaultAxesYGrid','off')
+set(0,'DefaultFigurePaperPositionMode','auto') % Ensure that jpg output is the same as the actual window on screen
+% set(0,'DefaultFigurePaperUnits','inches')
+set(0,'DefaultFigurePosition',[680 558 560 420])
+set(0,'DefaultFigureWindowStyle','normal')
+set(0,'DefaultLineLineWidth',0.5)
+% set(0,'DefaultFigureInvertHardcopy','on');
+```
+
 ### 解決多筆數據index排序問題
 **Note:** 重複收集實驗資料51次，每次有1152筆資料，但是每一次的index都是亂的。
 ```matlab
