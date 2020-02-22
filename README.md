@@ -10,11 +10,63 @@ cutnum = repmat(1152,1,51); % Experiment repeat 51 times, each times has 1152 da
 largedumpc = mat2cell(largedump,cutnum); % Convert array to cell array, each cell has 1152 data.
 largedumpr = cell2mat(cellfun(@sortrows,largedumpc,'Un',0));  % Sort the data in the cell.
 ```
-
-### 批次建立legend和改變legend的排列
-**Note:** 建立X1、X2、X3、Z1的legend並排成2排，不使用compose的話就變成```legend('X1','X2','X3','Z1')```，當需要標註的數量變多時就會造成困擾。
+### Convert symbolic expression to function handle
 ```matlab 
-t=0:0.01:2*pi;
+syms x y
+f(x,y) = x^3 + y^3;
+ht = matlabFunction(f)
+```
+### 提取symbolic expression的係數
+```matlab
+syms x
+c = sym2poly(x^3 - 2*x - 5)
+```
+### 多變量函數取係數
+```matlab
+syms x y
+cx = coeffs(3*x*y+2*y,y)
+cxy = coeffs(3*x*y+2*y,[x y])
+```
+### 在figure中建立子圖
+```matlab
+t = 0:0.01:20;
+x1 = sin(t);
+x2 = t;
+x3 = t.^2;
+plot(t,[x1;x2])
+axes('position',[.20 .65 .3 .25])
+box on % put box around new pair of axes
+plot(t,x3)Multivariate 
+```
+### 內插
+```matlab
+t = 0:0.3:2*pi; 
+x = sin(t);
+plot(t,x,'o');axis tight;hold on
+tq = 0:0.1:2*pi;
+xq = interp1(t,x,tq);
+plot(tq,xq,'.');
+```
+### ode45用於矩陣微分方程
+```matlab
+A = [1 2;3 4];
+t = 0:0.05:1;
+p0 = [0 0;0 0];
+[Tp,P] = ode45(@(t,p) pDRE(t,p,A),t,p0);
+plot(Tp,P);
+
+function dpdt = pDRE(~,p,A)
+P = reshape(p,size(A));  % Reshape input p into matrix
+Pdot = -P*A-A;
+dpdt = Pdot(:);  % Reshape output as a column vector
+end
+```
+---
+## Legend Settings
+### 批次建立legend和改變legend的排列
+**Note:** 建立X1、X2、X3、Z1的legend，不使用compose的話就變成```legend('X1','X2','X3','Z1')```，當需要標註的數量變多時就會造成困擾。
+```matlab 
+t = 0:0.01:2*pi;
 x1 = sin(t);
 x2 = cos(t);
 x3 = t+0.2;
@@ -22,28 +74,16 @@ z1 = -t+sin(t);
 figure,plot(t,x1,t,x2,t,x3,t,z1); axis tight
 index = 1:3;
 lgd = legend([compose("X%d",index) 'Z1']); % Create lengend
-lgd.NumColumns = 2;
+lgd.NumColumns = 2; % Number of columns
 ```
-
 ### 改變所有legend的字體大小
 ```matlab 
-set(findall(0,'Type','legend'),'FontSize',11) % set all legend font size
+set(findall(0,'Type','legend'),'FontSize',11) % Set all legends font size
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 移除legend背景顏色
+```matlab
+t = 0:0.01:2*pi;
+x = t.^2;
+plot(t,x); axis tight
+legend('x','color','none') % Remove Legend background color
+```
