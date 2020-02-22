@@ -12,6 +12,11 @@ largedumpr = cell2mat(cellfun(@sortrows,largedumpc,'Un',0));  % Sort the data in
 ```
 ### 批次建立legend
 
-ˋˋˋmatlab 
+```matlab 
 t=0:0.01:2*pi;
-ˋˋˋ
+x1 = sin(t);
+x2 = cos(t);
+x3 = t+0.2;
+plot(t,x1,t,x2,t,x3); axis tight
+legend(compose("X%d",[1 2 3])) % Create lengend
+```
