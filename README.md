@@ -60,6 +60,10 @@ xdot = -X*A-A;
 dxdt = xdot(:);  % Reshape output as a column vector
 end
 ```
+### fig檔
+```matlab
+savefig(gcf,'test.fig')
+```
 ---
 ## Legend Settings
 ### 批次建立legend和改變legend的排列
@@ -85,12 +89,6 @@ t = 0:0.01:2*pi;
 x = t.^2;
 plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
-```
----
-## 存檔
-### fig檔
-```matlab
-savefig(gcf,'test.fig')
 ```
 ---
 ## 設定Figure
