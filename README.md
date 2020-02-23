@@ -87,7 +87,20 @@ plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
 ```
 ---
-### 設定Figure格式
+## 存檔
+### fig檔
+```matlab
+savefig(gcf,'test.fig')
+```
+---
+## 設定Figure
+### 移除emf檔圖片背景顏色
+```matlab
+set(0,'DefaultFigureInvertHardcopy','off');
+set(gcf,'color','none'); % Graphic background is set to colorless
+set(gca,'color','none'); % Axis background set to colorless
+```
+### 更改預設設定
 ```matlab
 set(0,'DefaultAxesFontName','Times New Roman')  % Set all font style
 set(0,'DefaultAxesFontWeight','bold') % Set x y axis font style
