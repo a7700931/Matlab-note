@@ -1,4 +1,30 @@
 # Matlab 筆記
+### 刪除記憶體變數
+```matlab
+clearvars a b c
+```
+### 矩陣分解
+**Note:** mat2cell第二個變數是要拆的row，第三個變數是要拆的column
+```matlab
+A = reshape(1:20,5,4);
+B = mat2cell(A,[3 2],[2 2]);
+C = mat2cell(A,[4 1]);  % Ignore variable 3
+D = mat2cell(A,5,ones(1,4)); % Split into one by one column
+```
+### 比較每個元素對某向量的關係
+```matlab
+raw_data = randi(10,3); % 隨機產生1到10的3*3矩陣
+vector = 1:10;
+data = arrayfun(@(x) gt(x,vector),raw_data,'Un',0); % ('Un',0) means : returns the outputs in cell arrays.
+```
+### import大型文字檔，選取部分檔案範圍
+**Note:** ds.SelectedVariableNames可以選擇要的檔案範圍
+```matlab
+ds = tabularTextDatastore('filename.txt');
+ds.SelectedVariableNames([9:11 13:end]) = []; % Only need 1~8 and 12 columns
+data = readall(ds); % Read all data in datastore
+data = table2array(data); % Convert table to array
+```
 ### 解決多筆數據index排序問題
 **Note:** 重複收集實驗資料51次，每次有1152筆資料，但是每一次的index都是亂的。
 ```matlab
