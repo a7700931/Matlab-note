@@ -60,10 +60,16 @@ xdot = -X*A-A;
 dxdt = xdot(:);  % Reshape output as a column vector
 end
 ```
-### fig檔
+### fig檔存檔
 ```matlab
 savefig(gcf,'test.fig')
 ```
+### 顯示matlab所有設定
+```matlab
+set = get(groot,'factory');
+```
+**Note:** 例如set.factoryAxesFontName是Helvetica，要改成Times New Roman就要```set(0,'DefaultAxesFontName','Times New Roman')```
+
 ---
 ## Legend Settings
 ### 批次建立legend和改變legend的排列
