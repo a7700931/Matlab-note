@@ -68,7 +68,8 @@ savefig(gcf,'test.fig')
 ```matlab
 s = get(groot,'factory');
 ```
-**Note:** 例如s.factoryAxesFontName是Helvetica，要改成Times New Roman就要```set(0,'DefaultAxesFontName','Times New Roman')```
+**Note:** 例如s.factoryAxesFontName是Helvetica，要改成Times New Roman就要
+```matlab set(groot,'DefaultAxesFontName','Times New Roman') ```
 
 ---
 ## Legend Settings
