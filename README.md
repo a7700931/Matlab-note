@@ -2,8 +2,9 @@ Matlab 筆記
 ===
 
 ## 目錄
-* [Legend Settings](#legend-settings)  
-* [設定Figure](#設定figure)
+* [Save File](#save-file)
+* [Legend Settings](#legend-settings)
+* [Figure Settings](#figure-settings)
 
 ### 刪除記憶體變數
 ```matlab
@@ -92,10 +93,6 @@ xdot = -X*A-A;
 dxdt = xdot(:);  % Reshape output as a column vector
 end
 ```
-### fig檔存檔
-```matlab
-savefig(gcf,'test.fig')
-```
 ### 顯示matlab所有設定
 ```matlab
 s = get(groot,'factory');
@@ -103,6 +100,22 @@ s = get(groot,'factory');
 **Note:** 例如s.factoryAxesFontName是Helvetica，要改成Times New Roman就要
 ```set(groot,'DefaultAxesFontName','Times New Roman')```或是```set(0,'DefaultAxesFontName','Times New Roman')```
 
+---
+## Save File
+
+### fig File
+```matlab
+savefig(gcf,'test.fig')
+```
+### text File
+
+```matlab
+save('test1.txt','data','-ascii','-double','-tabs')
+
+dlmwrite('test2.txt',data,'delimiter','\t','precision','%.6f');
+
+writematrix(data,'test3.txt','Delimiter','\t')
+```
 ---
 ## Legend Settings
 ### 批次建立legend和改變legend的排列
@@ -130,8 +143,7 @@ plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
 ```
 ---
-
-## 設定Figure
+## Figure Settings
 ### 移除emf檔圖片背景顏色
 ```matlab
 set(0,'DefaultFigureInvertHardcopy','off');
@@ -173,5 +185,4 @@ set(0,'DefaultFigureWindowStyle','normal')
 set(0,'DefaultLineLineWidth',0.5)
 % set(0,'DefaultFigureInvertHardcopy','on');
 ```
-
 [回到頂部](#readme)
