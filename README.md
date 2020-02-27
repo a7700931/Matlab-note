@@ -1,4 +1,5 @@
-# Matlab 筆記
+Matlab 筆記
+===
 
 ## 目錄
 * [Legend Settings](#legend-settings)  
@@ -104,7 +105,6 @@ s = get(groot,'factory');
 
 ---
 ## Legend Settings
-
 ### 批次建立legend和改變legend的排列
 **Note:** 建立X1、X2、X3、Z1的legend，不使用compose的話就變成```legend('X1','X2','X3','Z1')```，當需要標註的數量變多時就會造成困擾。
 ```matlab 
@@ -130,8 +130,8 @@ plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
 ```
 ---
-## 設定Figure
 
+## 設定Figure
 ### 移除emf檔圖片背景顏色
 ```matlab
 set(0,'DefaultFigureInvertHardcopy','off');
