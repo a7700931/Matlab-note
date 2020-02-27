@@ -1,9 +1,7 @@
 # Matlab 筆記
 
 ## 目錄
-* [Legend Settings](#Legend Settings)
-
-## Legend Settings
+* [Legend Settings](#legends)  
 
 ### 刪除記憶體變數
 ```matlab
@@ -104,6 +102,7 @@ s = get(groot,'factory');
 ```set(groot,'DefaultAxesFontName','Times New Roman')```或是```set(0,'DefaultAxesFontName','Times New Roman')```
 
 ---
+<a name="legends"/>
 ## Legend Settings
 ### 批次建立legend和改變legend的排列
 **Note:** 建立X1、X2、X3、Z1的legend，不使用compose的話就變成```legend('X1','X2','X3','Z1')```，當需要標註的數量變多時就會造成困擾。
