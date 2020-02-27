@@ -2,6 +2,7 @@ Matlab 筆記
 ===
 
 ## 目錄
+* [Read File](#read-file)
 * [Save File](#save-file)
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
@@ -23,14 +24,6 @@ D = mat2cell(A,5,ones(1,4)); % Split into one by one column
 raw_data = randi(10,3); % 隨機產生1到10的3*3矩陣
 vector = 1:10;
 data = arrayfun(@(x) gt(x,vector),raw_data,'Un',0); % ('Un',0) means : returns the outputs in cell arrays.
-```
-### import大型文字檔，選取部分檔案範圍
-**Note:** ds.SelectedVariableNames可以選擇要的檔案範圍
-```matlab
-ds = tabularTextDatastore('filename.txt');
-ds.SelectedVariableNames([9:11 13:end]) = []; % Only need 1~8 and 12 columns
-data = readall(ds); % Read all data in datastore
-data = table2array(data); % Convert table to array
 ```
 ### 解決多筆數據index排序問題
 **Note:** 重複收集實驗資料51次，每次有1152筆資料，但是每一次的index都是亂的。
@@ -101,20 +94,41 @@ s = get(groot,'factory');
 ```set(groot,'DefaultAxesFontName','Times New Roman')```或是```set(0,'DefaultAxesFontName','Times New Roman')```
 
 ---
+## Read File
+### Load variables from file into workspace
+**Note:** If filename is an ASCII file, then load(filename) creates a double-precision array containing data from the file.
+```matlab
+data = load('data.txt');
+```
+### Read matrix from file
+**Note:** FileType:.txt, .dat, or .csv for delimited text files. .xls, .xlsb, .xlsm, .xlsx, .xltm, .xltx, or .ods for spreadsheet files.
+```matlab
+data = readmatrix('file.xlsx');
+```
+### import大型文字檔，選取部分檔案範圍
+**Note:** ds.SelectedVariableNames可以選擇要的檔案範圍
+```matlab
+ds = tabularTextDatastore('filename.txt');
+ds.SelectedVariableNames([9:11 13:end]) = []; % Only need 1~8 and 12 columns
+data = readall(ds); % Read all data in datastore
+data = table2array(data); % Convert table to array
+```
+---
 ## Save File
-
 ### fig File
 ```matlab
 savefig(gcf,'test.fig')
 ```
 ### text File
+**Note:** ```writematrix```show all number. ```writematrix```function has better cross-platform support and performance over the```dlmwrite```function. ```save```transform Decimal notation into Scientific notation.
 
+Delimiter to separate array elements.
 ```matlab
-save('test1.txt','data','-ascii','-double','-tabs')
+writematrix(data,file1.txt','Delimiter','\t'); %\t means tab
 
-dlmwrite('test2.txt',data,'delimiter','\t','precision','%.6f');
+dlmwrite('file2.txt',data,'delimiter','\t','precision','%.6f');
 
-writematrix(data,'test3.txt','Delimiter','\t')
+save('file3.txt','data','-ascii','-double','-tabs');
 ```
 ---
 ## Legend Settings
