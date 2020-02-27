@@ -1,11 +1,8 @@
 # Matlab 筆記
 
 ## 目錄
-* [Legend Settings](#legends)  
-* [設定Figure](#setfig)
-* [Test Game](#test-game)
-
-### Test Game
+* [Legend Settings](#legend-settings)  
+* [設定Figure](#設定figure)
 
 ### 刪除記憶體變數
 ```matlab
@@ -106,8 +103,6 @@ s = get(groot,'factory');
 ```set(groot,'DefaultAxesFontName','Times New Roman')```或是```set(0,'DefaultAxesFontName','Times New Roman')```
 
 ---
-<a name="legends"/>
-
 ## Legend Settings
 
 ### 批次建立legend和改變legend的排列
@@ -135,8 +130,6 @@ plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
 ```
 ---
-<a name="setfig"/>
-
 ## 設定Figure
 
 ### 移除emf檔圖片背景顏色
