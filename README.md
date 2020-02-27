@@ -146,6 +146,7 @@ lgd = legend([compose("X%d",index) 'Z1']); % Create lengend
 lgd.NumColumns = 2; % Number of columns
 ```
 ### 改變所有legend的字體大小
+**Note:** 要先有Legend才能使用
 ```matlab 
 set(findall(0,'Type','legend'),'FontSize',11) % Set all legends font size
 ```
