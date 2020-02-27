@@ -1,10 +1,8 @@
 # Matlab 筆記
 
-------
-[TOC]
-------
-
-
+## 目錄
+* [Legend Settings](#legend-settings)  
+* [設定Figure](#設定figure)
 
 ### 刪除記憶體變數
 ```matlab
