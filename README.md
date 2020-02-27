@@ -7,6 +7,12 @@ Matlab 筆記
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
+### Replace NaN values with zero
+```matlab
+test=rand(3);
+test(2)=NaN;
+test(isnan(test))=0;
+```
 ### 刪除記憶體變數
 ```matlab
 clearvars a b c
@@ -159,6 +165,14 @@ legend('x','color','none') % Remove Legend background color
 ```
 ---
 ## Figure Settings
+### Y軸linear scale改log scale
+```matlab
+set(gca,'YScale','log')
+```
+### Y軸log scale改linear scale
+```matlab
+set(gca,'YScale','linear')
+```
 ### 移除emf檔圖片背景顏色
 ```matlab
 set(0,'DefaultFigureInvertHardcopy','off');
