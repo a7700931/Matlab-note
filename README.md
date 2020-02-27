@@ -1,9 +1,9 @@
 # Matlab 筆記
 
 ## 目錄
-* [標題](#標題Legend)
+* [Legend](#Legend)
 
-### 標題Legend
+### Legend
 
 
 ### 刪除記憶體變數
