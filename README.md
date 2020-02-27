@@ -1,5 +1,7 @@
 # Matlab 筆記
 
+[TOC]
+
 ## 目錄
 * [Legend Settings](#legend-settings)  
 * [設定Figure](#設定figure)
