@@ -3,6 +3,9 @@
 ## 目錄
 * [Legend Settings](#legends)  
 * [設定Figure](#setfig)
+* [Test Game](#test-game)
+
+### Test Game
 
 ### 刪除記憶體變數
 ```matlab
@@ -135,6 +138,7 @@ legend('x','color','none') % Remove Legend background color
 <a name="setfig"/>
 
 ## 設定Figure
+
 ### 移除emf檔圖片背景顏色
 ```matlab
 set(0,'DefaultFigureInvertHardcopy','off');
