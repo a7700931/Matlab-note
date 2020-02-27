@@ -1,9 +1,9 @@
 # Matlab 筆記
 
 ## 目錄
-* [Legend Settings](#Legend Settings)
+* [Legend-Settings](#Legend-Settings)
 
-## Legend Settings
+## Legend-Settings
 
 ### 刪除記憶體變數
 ```matlab
