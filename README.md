@@ -4,16 +4,17 @@ Matlab 筆記
 ## 目錄
 * [Read File](#read-file)
 * [Save File](#save-file)
+* [Plot](#plot)
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
 ### Replace NaN values with zero
 ```matlab
-test=rand(3);
-test(2)=NaN;
-test(isnan(test))=0;
+test = rand(3);
+test(2) = NaN;
+test(isnan(test)) = 0;
 ```
-### 刪除記憶體變數
+### Clear variables from memory
 ```matlab
 clearvars a b c
 ```
@@ -137,6 +138,12 @@ dlmwrite('file2.txt',data,'delimiter','\t','precision','%.6f');
 save('file3.txt','data','-ascii','-double','-tabs');
 ```
 ---
+## Plot
+**Note:** Plot 3D figure
+```matlab
+figure,plot3(x,y,z,'.','MarkerSize',30);
+```
+---
 ## Legend Settings
 ### 批次建立legend和改變legend的排列
 **Note:** 建立X1、X2、X3、Z1的legend，不使用compose的話就變成```legend('X1','X2','X3','Z1')```，當需要標註的數量變多時就會造成困擾。
@@ -162,6 +169,13 @@ t = 0:0.01:2*pi;
 x = t.^2;
 plot(t,x); axis tight
 legend('x','color','none') % Remove Legend background color
+```
+### Add legend on specific curve
+```matlab
+x = 0:0.1:10;
+y = exp(x);
+h = plot(x,y);
+legend(h,'Line1');
 ```
 ---
 ## Figure Settings
