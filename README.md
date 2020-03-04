@@ -7,7 +7,17 @@ Matlab 筆記
 * [Plot](#plot)
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
+同上
+### Use deal() to simplify the establishment of the same matrix
+```matlab
+A = zeros(3,4);
+B = zeros(3,4);
+C = zeros(3,4);
+D = zeros(3,4);
 
+[A,B,C,D] = deal(zeros(3,4)); % As above.
+
+```
 ### Replace NaN values with zero
 ```matlab
 test = rand(3);
@@ -139,9 +149,19 @@ save('file3.txt','data','-ascii','-double','-tabs');
 ```
 ---
 ## Plot
-**Note:** Plot 3D figure
+### Plot 3D figure
 ```matlab
 figure,plot3(x,y,z,'.','MarkerSize',30);
+```
+### Synchronize multiple axes
+**Note:** linkaxes(ax,'x') synchronize x-axis, 'y' synchronize y-axis, 'xy' synchronize x and y-axis, 'off' turn off synchronization.
+```matlab
+t = 0:0.1:10;
+y1 = sin(t);
+y2 = cos(t);
+ax(1) = subplot(2,1,1),plot(t,y1)
+ax(2) = subplot(2,1,2),plot(t,y2)   
+linkaxes(ax,'x') 
 ```
 ---
 ## Legend Settings
