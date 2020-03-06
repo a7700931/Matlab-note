@@ -175,7 +175,7 @@ x3 = t+0.2;
 z1 = -t+sin(t);
 figure,plot(t,x1,t,x2,t,x3,t,z1); axis tight
 index = 1:3;
-lgd = legend([compose("X%d",index) 'Z1']); % Create lengend
+lgd = legend([compose("X%d",index') 'Z1']); % index must be vector
 lgd.NumColumns = 2; % Number of columns
 ```
 ### 改變所有legend的字體大小
