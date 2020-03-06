@@ -7,7 +7,7 @@ Matlab 筆記
 * [Plot](#plot)
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
-同上
+
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
 A = zeros(3,4);
