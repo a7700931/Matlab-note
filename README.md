@@ -10,6 +10,7 @@ Matlab 筆記
 
 ### Random Numbers from Normal Distribution with Specific Mean and Variance
 **Note:** Create an array of random floating-point numbers that are drawn from a normal distribution having a **mean of 500** and **variance of 25**. The```randn```function returns a sample of random numbers from a normal distribution with mean 0 and variance 1.
+
 **Note:** https://www.mathworks.com/help/matlab/math/random-numbers-with-specific-mean-and-variance.html
 ```matlab
 % Create a vector of 1000 random values drawn from a normal distribution with a mean of 500 and a standard deviation of 5.
