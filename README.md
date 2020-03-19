@@ -19,8 +19,8 @@ m = 500;
 y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
-$$\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(X_{i}-\mu)^2 
-\mu=0 \rightarrow 25\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(5X_{i}-\mu)^2$$
+$$\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(X_{i}-\mu)^2$$ 25倍的$$\sigma$$=$$25\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(5X_{i}-\mu)^2$$
+
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
 A = zeros(3,4);
