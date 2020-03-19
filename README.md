@@ -19,7 +19,7 @@ m = 500;
 y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
-$$\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(X_{i}-\mu)^2 \implies 25\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(5X_{i}-\mu)^2$$
+$$\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(X_{i}-\mu)^2 \rightarrow 25\sigma^2=\dfrac{1}{n}\sum_{i = 1}^{n}(5X_{i}-\mu)^2$$
 $$\implies$$
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
