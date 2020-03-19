@@ -19,6 +19,8 @@ m = 500;
 y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
+<img src="http://latex.codecogs.com/gif.latex?\frac{\partial J}{\partial \theta_k^{(j)}}=\sum_{i:r(i,j)=1}{\big((\theta^{(j)})^Tx^{(i)}-y^{(i,j)}\big)x_k^{(i)}}+\lambda \theta_k^{(j)}" />
+
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
 A = zeros(3,4);
