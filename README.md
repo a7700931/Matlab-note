@@ -19,7 +19,53 @@ m = 500;
 y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
-$$\sigma^2$$
+$$
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow class="MJX-TeXAtom-ORD">
+    <mstyle displaystyle="true" scriptlevel="0">
+      <mi>Var</mi>
+      <mo>&#x2061;<!-- ⁡ --></mo>
+      <mo stretchy="false">(</mo>
+      <mi>X</mi>
+      <mo stretchy="false">)</mo>
+      <mo>=</mo>
+      <mrow class="MJX-TeXAtom-ORD">
+        <mfrac>
+          <mn>1</mn>
+          <mi>n</mi>
+        </mfrac>
+      </mrow>
+      <munderover>
+        <mo>&#x2211;<!-- ∑ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>1</mn>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>n</mi>
+        </mrow>
+      </munderover>
+      <mo stretchy="false">(</mo>
+      <msub>
+        <mi>x</mi>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>i</mi>
+        </mrow>
+      </msub>
+      <mo>&#x2212;<!-- − --></mo>
+      <mi>&#x03BC;<!-- μ --></mi>
+      <msup>
+        <mo stretchy="false">)</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mn>2</mn>
+        </mrow>
+      </msup>
+      <mo>,</mo>
+    </mstyle>
+  </mrow>
+</math>
+$$
 
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
