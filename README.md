@@ -19,7 +19,7 @@ m = 500;
 y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+$$\sigma^2$$
 
 ### Use deal() to simplify the establishment of the same matrix
 ```matlab
