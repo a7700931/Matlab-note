@@ -20,7 +20,7 @@ y = s*randn(1000,1) + m;
 stats = [mean(y) std(y) var(y)]
 ```
 $$
-\sigma^2=\sum_{i = 1}^{n}
+\sigma^2=\sum_{i = 1}^{n}X^2_{i}
 $$
 
 ### Use deal() to simplify the establishment of the same matrix
