@@ -254,6 +254,7 @@ set(0,'DefaultAxesTitleFontSizeMultiplier',1.1)
 set(0,'DefaultAxesTitleFontWeight','bold')
 set(0,'DefaultAxesLooseInset',[0.13 0.11 0.095 0.075]);
 set(0,'DefaultAxesXGrid','off','DefaultAxesYGrid','off')
+% set(0,'DefaultAxesBox','off')
 set(0,'DefaultFigurePaperPositionMode','auto') % Ensure that jpg output is the same as the actual window on screen
 % set(0,'DefaultFigurePaperUnits','inches')
 set(0,'DefaultFigurePosition',[680 558 560 420])
