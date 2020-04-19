@@ -230,17 +230,18 @@ set(gca,'color','none'); % Axis background set to colorless
 ```matlab
 set(0,'DefaultAxesFontName','Times New Roman')  % Set all font style
 set(0,'DefaultAxesFontWeight','bold') % Set x y axis font style
-% set(0,'DefaultAxesFontSize',11) % Set all figure font size
+set(0,'DefaultAxesFontSize',12) % Set all figure font size
 set(0,'DefaultAxesLabelFontSizeMultiplier',1.2) % Set x y label size
 set(0,'DefaultAxesTitleFontSizeMultiplier',1.2) % Set all title size
 % set(0,'DefaultAxesTitleFontWeight','normal')  % Set all title style
-set(0,'DefaultAxesLooseInset',[0.0774 0.1016 0.0134 0.0540]) % Delete figure White Space % data from get(gca,'TightInset') 
+set(0,'DefaultAxesLooseInset',[0.0774 0.1016 0.0134 0.0540]) % Delete figure White Space % data from get(gca,'TightInset')
 set(0,'DefaultAxesXGrid','on','DefaultAxesYGrid','on') % Show x and y grid
+% set(0,'DefaultAxesBox','on')
 % set(0,'DefaultFigurePaperPositionMode','manual')
 % set(0,'DefaultFigurePaperUnits','inches')
 % set(0,'DefaultFigurePosition',[700 650 14.4*37.81 14.28*0.618*37.81]) % Set figure window position,size and resolution
 % set(0,'DefaultFigureWindowState','maximized') % Set figure fullscreen
-% set(0,'DefaultFigureWindowStyle','docked') % Set figure window style
+set(0,'DefaultFigureWindowStyle','docked') % Set figure window style
 set(0,'DefaultLineLineWidth',1.5) % Set all line width
 % set(0,'DefaultFigureInvertHardcopy','off');
 ```
