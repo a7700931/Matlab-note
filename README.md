@@ -8,6 +8,14 @@ Matlab 筆記
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
+### Partial Differential Equation
+```matlab
+syms L x(t) y(t)
+y=6*t
+L=x*y;
+Lx = functionalDerivative(L,x)
+```
+
 ### Random Numbers from Normal Distribution with Specific Mean and Variance
 **Note:** Create an array of random floating-point numbers that are drawn from a normal distribution having a **mean of 500** and **variance of 25**. The```randn```function returns a sample of random numbers from a normal distribution with **mean 0** and **variance 1**.
 
