@@ -8,6 +8,38 @@ Matlab 筆記
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
+### Save .fig data
+#### x y z data
+method 1
+```matlab
+fig = openfig('untitled.fig','invisible');
+dataObjs = findall(fig,'Type','Line');
+x1 = dataObjs(2).XData;
+y1 = dataObjs(2).YData;
+figure,plot(x1,y1)
+```
+method 2
+```matlab
+fig = openfig('untitled.fig','invisible');
+dataObjs = findobj(fig,'-property','YData');
+y1 = dataObjs(1).YData;
+x1 = dataObjs(1).XData;
+figure,plot(x1,y1)
+```
+method 3
+**Note:** Subplot 可能不能用
+```matlab
+fig = openfig('untitled.fig','invisible');
+y = fig.CurrentAxes.Children.YData;
+x = fig.CurrentAxes.Children.XData;
+figure,plot(x,y)
+```
+#### legend
+```matlab
+fig = openfig('untitled.fig','invisible');
+leg = findobj(fig,'type','legend');
+legText = leg(2).String;
+```
 ### Partial Differential Equation
 ```matlab
 syms L x(t) y(t)
@@ -15,7 +47,6 @@ y=6*t
 L=x*y;
 Lx = functionalDerivative(L,x)
 ```
-
 ### Random Numbers from Normal Distribution with Specific Mean and Variance
 **Note:** Create an array of random floating-point numbers that are drawn from a normal distribution having a **mean of 500** and **variance of 25**. The```randn```function returns a sample of random numbers from a normal distribution with **mean 0** and **variance 1**.
 
@@ -37,7 +68,6 @@ C = zeros(3,4);
 D = zeros(3,4);
 
 [A,B,C,D] = deal(zeros(3,4)); % As above.
-
 ```
 ### Replace NaN values with zero
 ```matlab
