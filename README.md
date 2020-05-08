@@ -12,7 +12,7 @@ Matlab 筆記
 #### For x y z data
 method 1
 ```matlab
-fig = openfig('untitled.fig','invisible');
+fig = openfig('data.fig','invisible');
 dataObjs = findall(fig,'Type','Line');
 x1 = dataObjs(2).XData;
 y1 = dataObjs(2).YData;
@@ -20,7 +20,7 @@ figure,plot(x1,y1)
 ```
 method 2
 ```matlab
-fig = openfig('untitled.fig','invisible');
+fig = openfig('data.fig','invisible');
 dataObjs = findobj(fig,'-property','YData');
 y1 = dataObjs(1).YData;
 x1 = dataObjs(1).XData;
@@ -30,14 +30,14 @@ method 3
 
 **Note:** Subplot 可能不能用
 ```matlab
-fig = openfig('untitled.fig','invisible');
+fig = openfig('data.fig','invisible');
 y = fig.CurrentAxes.Children.YData;
 x = fig.CurrentAxes.Children.XData;
 figure,plot(x,y)
 ```
 #### For legend
 ```matlab
-fig = openfig('untitled.fig','invisible');
+fig = openfig('data.fig','invisible');
 leg = findobj(fig,'type','legend');
 legText = leg(2).String;
 ```
