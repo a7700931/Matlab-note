@@ -184,6 +184,10 @@ data = table2array(data); % Convert table to array
 ```
 ---
 ## Save File
+### emf File
+```matlab
+saveas(gcf,'fig','meta')
+```
 ### fig File
 ```matlab
 savefig(gcf,'test.fig')
