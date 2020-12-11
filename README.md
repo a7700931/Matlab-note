@@ -9,7 +9,7 @@ Matlab 筆記
 * [Figure Settings](#figure-settings)
 
 ### Save .fig data
-#### For x y z data
+#### (1) For x y z data
 method 1
 ```matlab
 fig = openfig('data.fig','invisible');
@@ -27,7 +27,6 @@ x1 = dataObjs(1).XData;
 figure,plot(x1,y1)
 ```
 method 3
-
 **Note:** Subplot 可能不能用
 ```matlab
 fig = openfig('data.fig','invisible');
@@ -35,7 +34,7 @@ y = fig.CurrentAxes.Children.YData;
 x = fig.CurrentAxes.Children.XData;
 figure,plot(x,y)
 ```
-#### For legend
+#### (2) For legend
 ```matlab
 fig = openfig('data.fig','invisible');
 leg = findobj(fig,'type','legend');
