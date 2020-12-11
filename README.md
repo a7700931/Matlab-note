@@ -8,7 +8,7 @@ Matlab 筆記
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
-### 畫電池組抗圖同時用colorbar顯示頻率
+### 畫電池組抗圖同時用colorbar顯示頻率，並在特定點標示頻率值
 ```matlab
 data = readmatrix('00day_1_3_5v65c.txt');
 freq = data(:,2);
