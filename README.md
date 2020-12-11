@@ -27,6 +27,7 @@ x1 = dataObjs(1).XData;
 figure,plot(x1,y1)
 ```
 method 3
+
 **Note:** Subplot 可能不能用
 ```matlab
 fig = openfig('data.fig','invisible');
