@@ -8,6 +8,52 @@ Matlab 筆記
 * [Legend Settings](#legend-settings)
 * [Figure Settings](#figure-settings)
 
+### 畫電池組抗圖同時用colorbar顯示頻率
+```matlab
+data = readmatrix('00day_1_3_5v65c.txt');
+freq = data(:,2);
+x = data(:,3)*1e3;
+y = -data(:,4)*1e3;
+
+figure('Renderer','Painters');   % Change Renderer, otherwise .emf will has less clearity
+
+s = surf([x(:) x(:)],[y(:) y(:)],[freq(:) freq(:)]);    % Reshape and replicate data.
+s.FaceColor = 'none';   % Don't bother filling faces with color.
+s.EdgeColor = 'interp'; % Use interpolated color for edges.
+s.LineWidth = 2;
+view(2);	% Default 2D view.
+
+hold on
+plot3(x([1 2 end-1 end]),y([1 2 end-1 end]),max(freq)*ones(size(x([1 2 end-1 end]))),'k.','MarkerSize',20)
+text(x([1 2 end-1 end]),y([1 2 end-1 end]),append("  ",string(freq([1 2 end-1 end])),"Hz"))
+title('Impedance plot');xlabel('Re(Z) [m\Omega]');ylabel('-Im(Z) [m\Omega]')
+axis([min(x)*0.97 max(x)*1.08 min(y)*1.3 max(y)*1.1])
+
+c = colorbar;
+c.Parent.CurrentAxes.ColorScale = 'log';	% Use log because freq has huge difference.
+c.Limits = [min(freq) max(freq)];
+c.Ticks = [0.005 0.1 1 10 100 1600];
+c.TickLabels = c.Ticks;
+c.Label.String = 'Frequency [Hz]';
+c.Label.VerticalAlignment = 'bottom';
+```
+### surf使用漸層顏色
+```matlab 
+s = surf(x,y,z);    % Reshape and replicate data.
+s.FaceColor = 'none';   % Don't bother filling faces with color.
+s.EdgeColor = 'interp'; % Use interpolated color for edges.
+
+```
+### 當使用colorbar出現數值差異極大時，修改ColorScale為 log.
+```matlab
+c = colorbar;
+c.Parent.CurrentAxes.ColorScale = 'log';	% Use log because data has huge difference.
+
+```
+### 當儲存3D圖形出現失真時，修改figure的渲染器
+```matlab
+figure('Renderer','Painters');   % Change Renderer, otherwise .emf will has less clearity
+```
 ### Save .fig data
 #### (1) For x y z data
 method 1
