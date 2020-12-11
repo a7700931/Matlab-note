@@ -267,6 +267,7 @@ set(gca,'color','none'); % Axis background set to colorless
 ```
 ### 更改預設設定
 ```matlab
+set(0,'DefaultAxesBox','on') % Show figure box
 set(0,'DefaultAxesFontName','Times New Roman')  % Set all font style
 set(0,'DefaultAxesFontWeight','bold') % Set x y axis font style
 set(0,'DefaultAxesFontSize',12) % Set all figure font size
@@ -274,6 +275,7 @@ set(0,'DefaultAxesLabelFontSizeMultiplier',1.2) % Set x y label size
 set(0,'DefaultAxesTitleFontSizeMultiplier',1.2) % Set all title size
 % set(0,'DefaultAxesTitleFontWeight','normal')  % Set all title style
 set(0,'DefaultAxesLooseInset',[0.0774 0.1016 0.0134 0.0540]) % Delete figure White Space % data from get(gca,'TightInset')
+set(0,'DefaultAxesLooseInset',[0.0725 0.0612 0.0654 0.0540]) % If figure with colorbar
 set(0,'DefaultAxesXGrid','on','DefaultAxesYGrid','on') % Show x and y grid
 % set(0,'DefaultAxesBox','on')
 % set(0,'DefaultFigurePaperPositionMode','manual')
@@ -283,9 +285,12 @@ set(0,'DefaultAxesXGrid','on','DefaultAxesYGrid','on') % Show x and y grid
 set(0,'DefaultFigureWindowStyle','docked') % Set figure window style
 set(0,'DefaultLineLineWidth',1.5) % Set all line width
 % set(0,'DefaultFigureInvertHardcopy','off');
+set(0,'DefaultTiledlayoutPadding','none');
+set(0,'DefaultTiledlayoutTileSpacing','none');
 ```
 **Note:** 原始設定
 ```matlab
+set(0,'DefaultAxesBox','off')
 set(0,'DefaultAxesFontName','Helvetica')
 set(0,'DefaultAxesFontWeight','normal')
 % set(0,'DefaultAxesFontSize',10)
@@ -301,5 +306,7 @@ set(0,'DefaultFigurePosition',[680 558 560 420])
 set(0,'DefaultFigureWindowStyle','normal')
 set(0,'DefaultLineLineWidth',0.5)
 % set(0,'DefaultFigureInvertHardcopy','on');
+set(0,'DefaultTiledlayoutPadding','normal');
+set(0,'DefaultTiledlayoutTileSpacing','normal');
 ```
 [回到頂部](#readme)
